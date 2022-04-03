@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManyToMany_StudentCoursesWithData_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ManyToManyCoursesWithData">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ManyToManyStudentCoursesWithDatas" Relationship="Self.FK__ManyToMan__Cours__04E4BC85" FromRole="ManyToManyCoursesWithData" ToRole="ManyToManyStudentCoursesWithData" />
+  </EntityType>
+  <EntityType Name="ManyToManyStudentCoursesWithData">
+    <Key>
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
+    <Property Name="EnrolledDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ManyToManyCoursesWithData" Relationship="Self.FK__ManyToMan__Cours__04E4BC85" FromRole="ManyToManyStudentCoursesWithData" ToRole="ManyToManyCoursesWithData" />
+    <NavigationProperty Name="ManyToManyStudentsWithData" Relationship="Self.FK__ManyToMan__Stude__03F0984C" FromRole="ManyToManyStudentCoursesWithData" ToRole="ManyToManyStudentsWithData" />
+  </EntityType>
+  <EntityType Name="ManyToManyStudentsWithData">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ManyToManyStudentCoursesWithDatas" Relationship="Self.FK__ManyToMan__Stude__03F0984C" FromRole="ManyToManyStudentsWithData" ToRole="ManyToManyStudentCoursesWithData" />
+  </EntityType>
+  <Association Name="FK__ManyToMan__Cours__04E4BC85">
+    <End Role="ManyToManyCoursesWithData" Type="Self.ManyToManyCoursesWithData" Multiplicity="1" />
+    <End Role="ManyToManyStudentCoursesWithData" Type="Self.ManyToManyStudentCoursesWithData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManyToManyCoursesWithData">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="ManyToManyStudentCoursesWithData">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ManyToMan__Stude__03F0984C">
+    <End Role="ManyToManyStudentsWithData" Type="Self.ManyToManyStudentsWithData" Multiplicity="1" />
+    <End Role="ManyToManyStudentCoursesWithData" Type="Self.ManyToManyStudentCoursesWithData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManyToManyStudentsWithData">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="ManyToManyStudentCoursesWithData">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManyToMany_StudentCoursesWithData_DBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ManyToManyCoursesWithDatas" EntityType="Self.ManyToManyCoursesWithData" />
+    <EntitySet Name="ManyToManyStudentCoursesWithDatas" EntityType="Self.ManyToManyStudentCoursesWithData" />
+    <EntitySet Name="ManyToManyStudentsWithDatas" EntityType="Self.ManyToManyStudentsWithData" />
+    <AssociationSet Name="FK__ManyToMan__Cours__04E4BC85" Association="Self.FK__ManyToMan__Cours__04E4BC85">
+      <End Role="ManyToManyCoursesWithData" EntitySet="ManyToManyCoursesWithDatas" />
+      <End Role="ManyToManyStudentCoursesWithData" EntitySet="ManyToManyStudentCoursesWithDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ManyToMan__Stude__03F0984C" Association="Self.FK__ManyToMan__Stude__03F0984C">
+      <End Role="ManyToManyStudentsWithData" EntitySet="ManyToManyStudentsWithDatas" />
+      <End Role="ManyToManyStudentCoursesWithData" EntitySet="ManyToManyStudentCoursesWithDatas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employee_StoredProcedure_ModelStoreContainer" CdmEntityContainer="Employee_StoredProcedure_DBContext">
+    <EntitySetMapping Name="Employees_StoredProcedure">
+      <EntityTypeMapping TypeName="Employee_StoredProcedure_Model.Employees_StoredProcedure">
+        <MappingFragment StoreEntitySet="Employees_StoredProcedure">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Employee_StoredProcedure_Model.Employees_StoredProcedure">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Employee_StoredProcedure_Model.Store.InsertEmployee_StoredProcedure">
+            <ScalarProperty Name="Salary" ParameterName="Salary" />
+            <ScalarProperty Name="Gender" ParameterName="Gender" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Employee_StoredProcedure_Model.Store.UpdateEmployee_StoredProcedure">
+            <ScalarProperty Name="Salary" ParameterName="Salary" Version="Current" />
+            <ScalarProperty Name="Gender" ParameterName="Gender" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="ID" ParameterName="ID" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Employee_StoredProcedure_Model.Store.DeleteEmployee_StoredProcedure">
+            <ScalarProperty Name="ID" ParameterName="ID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteEmployee" FunctionName="Employee_StoredProcedure_Model.Store.DeleteEmployee" />
+    <FunctionImportMapping FunctionImportName="DeleteEmployee_StoredProcedure" FunctionName="Employee_StoredProcedure_Model.Store.DeleteEmployee_StoredProcedure" />
+    <FunctionImportMapping FunctionImportName="InsertEmployee" FunctionName="Employee_StoredProcedure_Model.Store.InsertEmployee" />
+    <FunctionImportMapping FunctionImportName="InsertEmployee_StoredProcedure" FunctionName="Employee_StoredProcedure_Model.Store.InsertEmployee_StoredProcedure" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployee" FunctionName="Employee_StoredProcedure_Model.Store.UpdateEmployee" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployee_StoredProcedure" FunctionName="Employee_StoredProcedure_Model.Store.UpdateEmployee_StoredProcedure" />
+  </EntityContainerMapping>
+</Mapping>

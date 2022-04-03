@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employees_TablePerHierarchy_ModelStoreContainer" CdmEntityContainer="Employees_TablePerHierarchy_DBContext">
+    <EntitySetMapping Name="Employees_TablePerHierarchy">
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerHierarchy_Model.Employees_TablePerHierarchy)">
+        <MappingFragment StoreEntitySet="Employees_TablePerHierarchy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerHierarchy_Model.PermanentEmployees_TablePerHierarchy)">
+        <MappingFragment StoreEntitySet="Employees_TablePerHierarchy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AnuualSalary" ColumnName="AnuualSalary" />
+          <Condition ColumnName="Discriminator" Value="PermanentEmployee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerHierarchy_Model.ContractEmployees_TablePerHierarchy)">
+        <MappingFragment StoreEntitySet="Employees_TablePerHierarchy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="HourlyPay" ColumnName="HourlyPay" />
+          <Condition ColumnName="Discriminator" Value="ContractEmployee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

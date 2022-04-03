@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ManyToMany_StudentCourses_ModelStoreContainer" CdmEntityContainer="ManyToMany_StudentCourses_DBContext">
+    <EntitySetMapping Name="ManyToManyCourses">
+      <EntityTypeMapping TypeName="ManyToMany_StudentCourses_Model.ManyToManyCours">
+        <MappingFragment StoreEntitySet="ManyToManyCourses">
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManyToManyStudents">
+      <EntityTypeMapping TypeName="ManyToMany_StudentCourses_Model.ManyToManyStudent">
+        <MappingFragment StoreEntitySet="ManyToManyStudents">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ManyToManyStudentCourses" TypeName="ManyToMany_StudentCourses_Model.ManyToManyStudentCourses" StoreEntitySet="ManyToManyStudentCourses">
+      <EndProperty Name="ManyToManyCourses">
+        <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+      </EndProperty>
+      <EndProperty Name="ManyToManyStudents">
+        <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

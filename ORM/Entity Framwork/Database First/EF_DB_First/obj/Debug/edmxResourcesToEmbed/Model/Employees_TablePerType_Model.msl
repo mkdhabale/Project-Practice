@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employees_TablePerType_ModelStoreContainer" CdmEntityContainer="Employees_TablePerType_DBContext">
+    <EntitySetMapping Name="Employees_TablePerType">
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerType_Model.Employees_TablePerType)">
+        <MappingFragment StoreEntitySet="Employees_TablePerType">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerType_Model.ContractEmployees_TablePerType)">
+        <MappingFragment StoreEntitySet="ContractEmployees_TablePerType">
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="HourlyPay" ColumnName="HourlyPay" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerType_Model.PermanentEmployees_TablePerType)">
+        <MappingFragment StoreEntitySet="PermanentEmployees_TablePerType">
+          <ScalarProperty Name="AnnualSalary" ColumnName="AnnualSalary" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

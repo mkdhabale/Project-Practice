@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employees_SelfReferencing_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Employees_SelfReferencing">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManagerID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Employees__Manag__66603565">
+    <End Role="Employees_SelfReferencing" Type="Self.Employees_SelfReferencing" Multiplicity="0..1" />
+    <End Role="Employees_SelfReferencing1" Type="Self.Employees_SelfReferencing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_SelfReferencing">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Employees_SelfReferencing1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employees_SelfReferencing_ModelStoreContainer">
+    <EntitySet Name="Employees_SelfReferencing" EntityType="Self.Employees_SelfReferencing" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Employees__Manag__66603565" Association="Self.FK__Employees__Manag__66603565">
+      <End Role="Employees_SelfReferencing" EntitySet="Employees_SelfReferencing" />
+      <End Role="Employees_SelfReferencing1" EntitySet="Employees_SelfReferencing" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

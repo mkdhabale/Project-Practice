@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Employees_TablePerType_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mukul_DND.dbo.ContractEmployees_TablePerType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ContractEmployees_TablePerType">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="HourlyPay" Type="int" />
+          <Property Name="HoursWorked" Type="int" />
+        </EntityType>
+        <EntityType Name="Employees_TablePerType">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mukul_DND.dbo.PermanentEmployees_TablePerType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PermanentEmployees_TablePerType">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="AnnualSalary" Type="int" />
+        </EntityType>
+        <Association Name="FK__ContractE__Emplo__6E01572D">
+          <End Role="Employees_TablePerType" Type="Self.Employees_TablePerType" Multiplicity="1" />
+          <End Role="ContractEmployees_TablePerType" Type="Self.ContractEmployees_TablePerType" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employees_TablePerType">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="ContractEmployees_TablePerType">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permanent__Emplo__6C190EBB">
+          <End Role="Employees_TablePerType" Type="Self.Employees_TablePerType" Multiplicity="1" />
+          <End Role="PermanentEmployees_TablePerType" Type="Self.PermanentEmployees_TablePerType" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employees_TablePerType">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="PermanentEmployees_TablePerType">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Employees_TablePerType_ModelStoreContainer">
+          <EntitySet Name="Employees_TablePerType" EntityType="Self.Employees_TablePerType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractEmployees_TablePerType" EntityType="Self.ContractEmployees_TablePerType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ContractEmployees_TablePerType].[EmployeeID] AS [EmployeeID], 
+[ContractEmployees_TablePerType].[HourlyPay] AS [HourlyPay], 
+[ContractEmployees_TablePerType].[HoursWorked] AS [HoursWorked]
+FROM [dbo].[ContractEmployees_TablePerType] AS [ContractEmployees_TablePerType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PermanentEmployees_TablePerType" EntityType="Self.PermanentEmployees_TablePerType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[PermanentEmployees_TablePerType].[EmployeeID] AS [EmployeeID], 
+[PermanentEmployees_TablePerType].[AnnualSalary] AS [AnnualSalary]
+FROM [dbo].[PermanentEmployees_TablePerType] AS [PermanentEmployees_TablePerType]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__ContractE__Emplo__6E01572D" Association="Self.FK__ContractE__Emplo__6E01572D">
+            <End Role="Employees_TablePerType" EntitySet="Employees_TablePerType" />
+            <End Role="ContractEmployees_TablePerType" EntitySet="ContractEmployees_TablePerType" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permanent__Emplo__6C190EBB" Association="Self.FK__Permanent__Emplo__6C190EBB">
+            <End Role="Employees_TablePerType" EntitySet="Employees_TablePerType" />
+            <End Role="PermanentEmployees_TablePerType" EntitySet="PermanentEmployees_TablePerType" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Employees_TablePerType_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employees_TablePerType">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContractEmployees_TablePerType" BaseType="Employees_TablePerType_Model.Employees_TablePerType">
+          <Property Name="HourlyPay" Type="Int32" />
+          <Property Name="HoursWorked" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PermanentEmployees_TablePerType" BaseType="Employees_TablePerType_Model.Employees_TablePerType">
+          <Property Name="AnnualSalary" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Employees_TablePerType_DBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees_TablePerType" EntityType="Self.Employees_TablePerType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Employees_TablePerType_ModelStoreContainer" CdmEntityContainer="Employees_TablePerType_DBContext">
+          <EntitySetMapping Name="Employees_TablePerType">
+            <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerType_Model.Employees_TablePerType)">
+              <MappingFragment StoreEntitySet="Employees_TablePerType">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerType_Model.ContractEmployees_TablePerType)">
+              <MappingFragment StoreEntitySet="ContractEmployees_TablePerType">
+                <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+                <ScalarProperty Name="HourlyPay" ColumnName="HourlyPay" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Employees_TablePerType_Model.PermanentEmployees_TablePerType)">
+              <MappingFragment StoreEntitySet="PermanentEmployees_TablePerType">
+                <ScalarProperty Name="AnnualSalary" ColumnName="AnnualSalary" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

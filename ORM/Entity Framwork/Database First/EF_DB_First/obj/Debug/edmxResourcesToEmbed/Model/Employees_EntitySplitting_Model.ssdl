@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employees_EntitySplitting_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EmployeeContactDetails_EntitySplitting">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandLine" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employees_EntitySplitting">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="fk_pk_empid">
+    <End Role="Employees_EntitySplitting" Type="Self.Employees_EntitySplitting" Multiplicity="1" />
+    <End Role="EmployeeContactDetails_EntitySplitting" Type="Self.EmployeeContactDetails_EntitySplitting" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_EntitySplitting">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeContactDetails_EntitySplitting">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employees_EntitySplitting_ModelStoreContainer">
+    <EntitySet Name="EmployeeContactDetails_EntitySplitting" EntityType="Self.EmployeeContactDetails_EntitySplitting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees_EntitySplitting" EntityType="Self.Employees_EntitySplitting" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_pk_empid" Association="Self.fk_pk_empid">
+      <End Role="Employees_EntitySplitting" EntitySet="Employees_EntitySplitting" />
+      <End Role="EmployeeContactDetails_EntitySplitting" EntitySet="EmployeeContactDetails_EntitySplitting" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

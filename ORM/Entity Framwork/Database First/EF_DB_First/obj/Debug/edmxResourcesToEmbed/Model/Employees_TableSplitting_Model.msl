@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employees_TableSplittig_ModelStoreContainer" CdmEntityContainer="Employees_TableSplitting_DBContext">
+    <EntitySetMapping Name="Employees_TableSplitting">
+      <EntityTypeMapping TypeName="Employees_TableSplittig_Model.Employees_TableSplitting">
+        <MappingFragment StoreEntitySet="Employees_TableSplitting">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Employees_TableSplittingEmployeesContactDetails_TableSplitting" TypeName="Employees_TableSplittig_Model.Employees_TableSplittingEmployeesContactDetails_TableSplitting" StoreEntitySet="Employees_TableSplitting">
+      <EndProperty Name="EmployeesContactDetails_TableSplitting">
+        <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+      </EndProperty>
+      <EndProperty Name="Employees_TableSplitting">
+        <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="EmployeesContactDetails_TableSplitting">
+      <EntityTypeMapping TypeName="IsTypeOf(Employees_TableSplittig_Model.EmployeesContactDetails_TableSplitting)">
+        <MappingFragment StoreEntitySet="Employees_TableSplitting">
+          <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employee_StoredProcedure_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employees_StoredProcedure">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees_StoredProcedure" EntityType="Self.Employees_StoredProcedure" />
+    <FunctionImport Name="DeleteEmployee_StoredProcedure">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertEmployee_StoredProcedure">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Salary" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmployee_StoredProcedure">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Salary" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

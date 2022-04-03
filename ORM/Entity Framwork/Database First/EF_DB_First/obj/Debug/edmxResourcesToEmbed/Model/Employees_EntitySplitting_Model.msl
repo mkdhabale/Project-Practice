@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employees_EntitySplitting_ModelStoreContainer" CdmEntityContainer="Employees_EntitySplitting_DBContext">
+    <EntitySetMapping Name="Employees_EntitySplitting">
+      <EntityTypeMapping TypeName="Employees_EntitySplitting_Model.Employees_EntitySplitting">
+        <MappingFragment StoreEntitySet="Employees_EntitySplitting">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+        <MappingFragment StoreEntitySet="EmployeeContactDetails_EntitySplitting">
+          <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

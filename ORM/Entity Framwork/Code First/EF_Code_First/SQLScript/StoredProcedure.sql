@@ -1,0 +1,7 @@
+﻿Insert into Employees_StoredProcedure values ('Mark', 'Male', 60000)
+Insert into Employees_StoredProcedure values ('Steve', 'Male', 45000)
+Insert into Employees_StoredProcedure values ('Ben', 'Male', 70000)
+Insert into Employees_StoredProcedure values ('Philip', 'Male', 45000)
+Insert into Employees_StoredProcedure values ('Mary', 'Female', 30000)
+Insert into Employees_StoredProcedure values ('Valarie', 'Female', 35000)
+Insert into Employees_StoredProcedure values ('John', 'Male', 80000)

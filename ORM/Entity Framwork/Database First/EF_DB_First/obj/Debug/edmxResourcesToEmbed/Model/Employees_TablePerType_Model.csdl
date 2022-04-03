@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employees_TablePerType_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employees_TablePerType">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContractEmployees_TablePerType" BaseType="Employees_TablePerType_Model.Employees_TablePerType">
+    <Property Name="HourlyPay" Type="Int32" />
+    <Property Name="HoursWorked" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PermanentEmployees_TablePerType" BaseType="Employees_TablePerType_Model.Employees_TablePerType">
+    <Property Name="AnnualSalary" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="Employees_TablePerType_DBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees_TablePerType" EntityType="Self.Employees_TablePerType" />
+  </EntityContainer>
+</Schema>

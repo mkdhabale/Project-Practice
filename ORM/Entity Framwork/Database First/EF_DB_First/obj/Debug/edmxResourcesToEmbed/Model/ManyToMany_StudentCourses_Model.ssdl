@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManyToMany_StudentCourses_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ManyToManyCourses">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ManyToManyStudentCourses">
+    <Key>
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManyToManyStudents">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__ManyToMan__Cours__7D439ABD">
+    <End Role="ManyToManyCourses" Type="Self.ManyToManyCourses" Multiplicity="1" />
+    <End Role="ManyToManyStudentCourses" Type="Self.ManyToManyStudentCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManyToManyCourses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="ManyToManyStudentCourses">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ManyToMan__Stude__7C4F7684">
+    <End Role="ManyToManyStudents" Type="Self.ManyToManyStudents" Multiplicity="1" />
+    <End Role="ManyToManyStudentCourses" Type="Self.ManyToManyStudentCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManyToManyStudents">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="ManyToManyStudentCourses">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManyToMany_StudentCourses_ModelStoreContainer">
+    <EntitySet Name="ManyToManyCourses" EntityType="Self.ManyToManyCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManyToManyStudentCourses" EntityType="Self.ManyToManyStudentCourses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManyToManyStudents" EntityType="Self.ManyToManyStudents" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ManyToMan__Cours__7D439ABD" Association="Self.FK__ManyToMan__Cours__7D439ABD">
+      <End Role="ManyToManyCourses" EntitySet="ManyToManyCourses" />
+      <End Role="ManyToManyStudentCourses" EntitySet="ManyToManyStudentCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ManyToMan__Stude__7C4F7684" Association="Self.FK__ManyToMan__Stude__7C4F7684">
+      <End Role="ManyToManyStudents" EntitySet="ManyToManyStudents" />
+      <End Role="ManyToManyStudentCourses" EntitySet="ManyToManyStudentCourses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

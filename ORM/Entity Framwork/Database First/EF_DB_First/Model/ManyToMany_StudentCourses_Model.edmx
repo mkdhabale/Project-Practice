@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ManyToMany_StudentCourses_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ManyToManyCourses">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ManyToManyStudentCourses">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ManyToManyStudents">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__ManyToMan__Cours__7D439ABD">
+          <End Role="ManyToManyCourses" Type="Self.ManyToManyCourses" Multiplicity="1" />
+          <End Role="ManyToManyStudentCourses" Type="Self.ManyToManyStudentCourses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManyToManyCourses">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="ManyToManyStudentCourses">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ManyToMan__Stude__7C4F7684">
+          <End Role="ManyToManyStudents" Type="Self.ManyToManyStudents" Multiplicity="1" />
+          <End Role="ManyToManyStudentCourses" Type="Self.ManyToManyStudentCourses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManyToManyStudents">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="ManyToManyStudentCourses">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ManyToMany_StudentCourses_ModelStoreContainer">
+          <EntitySet Name="ManyToManyCourses" EntityType="Self.ManyToManyCourses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ManyToManyStudentCourses" EntityType="Self.ManyToManyStudentCourses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ManyToManyStudents" EntityType="Self.ManyToManyStudents" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ManyToMan__Cours__7D439ABD" Association="Self.FK__ManyToMan__Cours__7D439ABD">
+            <End Role="ManyToManyCourses" EntitySet="ManyToManyCourses" />
+            <End Role="ManyToManyStudentCourses" EntitySet="ManyToManyStudentCourses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ManyToMan__Stude__7C4F7684" Association="Self.FK__ManyToMan__Stude__7C4F7684">
+            <End Role="ManyToManyStudents" EntitySet="ManyToManyStudents" />
+            <End Role="ManyToManyStudentCourses" EntitySet="ManyToManyStudentCourses" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManyToMany_StudentCourses_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ManyToManyCours">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ManyToManyStudents" Relationship="Self.ManyToManyStudentCourses" FromRole="ManyToManyCourses" ToRole="ManyToManyStudents" />
+        </EntityType>
+        <EntityType Name="ManyToManyStudent">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ManyToManyCourses" Relationship="Self.ManyToManyStudentCourses" FromRole="ManyToManyStudents" ToRole="ManyToManyCourses" />
+        </EntityType>
+        <Association Name="ManyToManyStudentCourses">
+          <End Role="ManyToManyCourses" Type="Self.ManyToManyCours" Multiplicity="*" />
+          <End Role="ManyToManyStudents" Type="Self.ManyToManyStudent" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ManyToMany_StudentCourses_DBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ManyToManyCourses" EntityType="Self.ManyToManyCours" />
+          <EntitySet Name="ManyToManyStudents" EntityType="Self.ManyToManyStudent" />
+          <AssociationSet Name="ManyToManyStudentCourses" Association="Self.ManyToManyStudentCourses">
+            <End Role="ManyToManyCourses" EntitySet="ManyToManyCourses" />
+            <End Role="ManyToManyStudents" EntitySet="ManyToManyStudents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManyToMany_StudentCourses_ModelStoreContainer" CdmEntityContainer="ManyToMany_StudentCourses_DBContext">
+          <EntitySetMapping Name="ManyToManyCourses">
+            <EntityTypeMapping TypeName="ManyToMany_StudentCourses_Model.ManyToManyCours">
+              <MappingFragment StoreEntitySet="ManyToManyCourses">
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManyToManyStudents">
+            <EntityTypeMapping TypeName="ManyToMany_StudentCourses_Model.ManyToManyStudent">
+              <MappingFragment StoreEntitySet="ManyToManyStudents">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ManyToManyStudentCourses" TypeName="ManyToMany_StudentCourses_Model.ManyToManyStudentCourses" StoreEntitySet="ManyToManyStudentCourses">
+            <EndProperty Name="ManyToManyCourses">
+              <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+            </EndProperty>
+            <EndProperty Name="ManyToManyStudents">
+              <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

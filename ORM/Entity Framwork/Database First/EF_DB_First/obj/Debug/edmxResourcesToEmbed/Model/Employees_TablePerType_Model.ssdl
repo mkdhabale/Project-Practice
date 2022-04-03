@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employees_TablePerType_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Mukul_DND.dbo.ContractEmployees_TablePerType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ContractEmployees_TablePerType">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="HourlyPay" Type="int" />
+    <Property Name="HoursWorked" Type="int" />
+  </EntityType>
+  <EntityType Name="Employees_TablePerType">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Mukul_DND.dbo.PermanentEmployees_TablePerType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PermanentEmployees_TablePerType">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="AnnualSalary" Type="int" />
+  </EntityType>
+  <Association Name="FK__ContractE__Emplo__6E01572D">
+    <End Role="Employees_TablePerType" Type="Self.Employees_TablePerType" Multiplicity="1" />
+    <End Role="ContractEmployees_TablePerType" Type="Self.ContractEmployees_TablePerType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_TablePerType">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="ContractEmployees_TablePerType">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Permanent__Emplo__6C190EBB">
+    <End Role="Employees_TablePerType" Type="Self.Employees_TablePerType" Multiplicity="1" />
+    <End Role="PermanentEmployees_TablePerType" Type="Self.PermanentEmployees_TablePerType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_TablePerType">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="PermanentEmployees_TablePerType">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employees_TablePerType_ModelStoreContainer">
+    <EntitySet Name="Employees_TablePerType" EntityType="Self.Employees_TablePerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractEmployees_TablePerType" EntityType="Self.ContractEmployees_TablePerType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ContractEmployees_TablePerType].[EmployeeID] AS [EmployeeID], 
+[ContractEmployees_TablePerType].[HourlyPay] AS [HourlyPay], 
+[ContractEmployees_TablePerType].[HoursWorked] AS [HoursWorked]
+FROM [dbo].[ContractEmployees_TablePerType] AS [ContractEmployees_TablePerType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PermanentEmployees_TablePerType" EntityType="Self.PermanentEmployees_TablePerType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[PermanentEmployees_TablePerType].[EmployeeID] AS [EmployeeID], 
+[PermanentEmployees_TablePerType].[AnnualSalary] AS [AnnualSalary]
+FROM [dbo].[PermanentEmployees_TablePerType] AS [PermanentEmployees_TablePerType]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__ContractE__Emplo__6E01572D" Association="Self.FK__ContractE__Emplo__6E01572D">
+      <End Role="Employees_TablePerType" EntitySet="Employees_TablePerType" />
+      <End Role="ContractEmployees_TablePerType" EntitySet="ContractEmployees_TablePerType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Permanent__Emplo__6C190EBB" Association="Self.FK__Permanent__Emplo__6C190EBB">
+      <End Role="Employees_TablePerType" EntitySet="Employees_TablePerType" />
+      <End Role="PermanentEmployees_TablePerType" EntitySet="PermanentEmployees_TablePerType" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

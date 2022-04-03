@@ -1,0 +1,7 @@
+﻿Insert into Employees_ConditionalMapping values ('Mark', 'Hastings', 'Male', 0)
+Insert into Employees_ConditionalMapping values ('Steve', 'Pound', 'Male', 0)
+Insert into Employees_ConditionalMapping values ('Ben', 'Hoskins', 'Male', 0)
+Insert into Employees_ConditionalMapping values ('Philip', 'Hastings', 'Male', 1)
+Insert into Employees_ConditionalMapping values ('Mary', 'Lambeth', 'Female', 0)
+Insert into Employees_ConditionalMapping values ('Valarie', 'Vikings', 'Female', 0)
+Insert into Employees_ConditionalMapping values ('John', 'Stanmore', 'Male', 1)

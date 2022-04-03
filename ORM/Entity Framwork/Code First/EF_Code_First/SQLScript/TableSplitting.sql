@@ -1,0 +1,5 @@
+﻿Insert into Employees_TableSplitting values ('Mark', 'Hastings', 'Male', 'x@x.com', 'XXX', 'XXX')
+Insert into Employees_TableSplitting values ('Steve', 'Pound', 'Male', 'y@y.com', 'YYY', 'YYY')
+Insert into Employees_TableSplitting values ('Ben', 'Hoskins', 'Male', 'z@z.com', 'ZZZ', 'ZZZ')
+Insert into Employees_TableSplitting values ('Philip', 'Hastings', 'Male', 'a@a.com', 'AAA', 'AAA')
+Insert into Employees_TableSplitting values ('Mary', 'Lambeth', 'Female', 'b@b.com', 'BBB', 'BBB')

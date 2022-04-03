@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employees_SelfReferencing_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employees_SelfReferencing">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ManagerID" Type="Int32" />
+    <NavigationProperty Name="Subordinates" Relationship="Self.FK__Employees__Manag__66603565" FromRole="Employees_SelfReferencing" ToRole="Employees_SelfReferencing1" />
+    <NavigationProperty Name="Manager" Relationship="Self.FK__Employees__Manag__66603565" FromRole="Employees_SelfReferencing1" ToRole="Employees_SelfReferencing" />
+  </EntityType>
+  <Association Name="FK__Employees__Manag__66603565">
+    <End Role="Employees_SelfReferencing" Type="Self.Employees_SelfReferencing" Multiplicity="0..1" />
+    <End Role="Employees_SelfReferencing1" Type="Self.Employees_SelfReferencing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_SelfReferencing">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Employees_SelfReferencing1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employees_SelfReferencing_DBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees_SelfReferencing" EntityType="Self.Employees_SelfReferencing" />
+    <AssociationSet Name="FK__Employees__Manag__66603565" Association="Self.FK__Employees__Manag__66603565">
+      <End Role="Employees_SelfReferencing" EntitySet="Employees_SelfReferencing" />
+      <End Role="Employees_SelfReferencing1" EntitySet="Employees_SelfReferencing" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
