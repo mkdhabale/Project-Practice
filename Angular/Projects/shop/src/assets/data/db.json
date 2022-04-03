@@ -1,0 +1,30 @@
+{
+    "products": [
+      { "id": 1, 
+        "name": "HP 1", 
+        "category_id": 2,
+        "description": "HP 1 desc",
+        "price": 40,
+        "is_available": true,
+        "rating": 4,
+        "review": 130,
+        "vendor_name": "vendor 1",
+        "warranty": 3
+     },
+     { "id": 1, 
+        "name": "HP 2", 
+        "category_id": 3,
+        "description": "HP 2 desc",
+        "price": 45,
+        "is_available": true,
+        "rating": 4,
+        "review": 1430,
+        "vendor_name": "vendor 2",
+        "warranty": 5
+     }  
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }
