@@ -1,0 +1,30 @@
+<form [formGroup]="userForm" >
+
+<table class="table">
+    <tr>
+        <td>Id</td>
+        <td>first Name</td>
+        <td>last Name</td>
+    </tr>
+    <tr *ngFor="let item of contactList">
+        <td>{{item.id}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+    </tr>
+</table>
+
+    <div class="mb-3">
+        <label>First Name</label>
+        <input type="fName" formControlName="fName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input type="lName" formControlName="lName" class="form-control">
+    </div>
+
+    <button (click)="createData()">Add</button>
+    <button (click)="updateData(1)">Update id=1</button>
+    <button (click)="deleteData(2)">Delete id=2</button>
+</form>
+
+

@@ -1,0 +1,64 @@
+<div class="content"><span>{{title}} app is running!</span></div>
+
+
+<!-- <h1>{{data | uppercase | slice:2:5}}</h1>
+<app-user-list (parentCF)="parentCF($event)" ></app-user-list> -->
+<!-- Lazy loading
+<button (click)="loadAdmin()">Load lazy admin</button>
+<button (click)="loadList()">Load lazy List</button>
+HOMe page --> 
+
+<!-- <br />
+<a [appCustomStyle] routerLink="log"> User</a><br />
+<a appCustomStyle routerLink="uselist"> UserList</a><br />
+<a appCustomStyle routerLink="form"> Form</a><br />
+<a appCustomStyle routerLink="form1"> FormN1s</a><br />
+<a appCustomStyle routerLink="form2"> FormN2</a><br /> -->
+
+
+
+
+<h3>Admin Page</h3>
+<ul>
+    <li>
+        <a routerLink="admin/user"> User</a>
+    </li>
+    <li>
+        <a routerLink="admin/list">List</a>
+    </li>
+    <li>
+        <a routerLink="admin/userform">user Form Array Component</a>
+    </li>
+    <li>
+        <a routerLink="admin/observableTesting">observable Testing Component</a>
+    </li>
+    <li>
+        <a routerLink="admin/httpuser">Http User data</a>
+    </li>
+    
+</ul>
+
+<h3>User Page</h3>
+<ul>
+    <li>
+        <a routerLink="user1/user">User</a>
+    </li>
+    <li>
+        <a routerLink="user1/list">List</a>
+    </li>
+</ul>
+<!-- <table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>User Id</td>
+    </tr>
+    <tr *ngFor="let item of data1">
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.userId}}</td>
+    </tr>
+</table> -->
+
+
+<router-outlet ></router-outlet>

@@ -1,0 +1,33 @@
+<p>admin list works! Template driven form</p>
+
+
+<div class="col-sm-6">
+    <form #listForm="ngForm" (ngSubmit)="onSubmit(listForm.value)">
+        <div class="mb-3">
+            <label>Email address</label>
+            <input #email="ngModel" required type="email" email name="useremail" [ngModel]="listData.email" class="form-control"
+                aria-describedby="emailHelp">
+            <span *ngIf="email.invalid && email.touched" class="error">email is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input required minlength="5" maxlength="7" #password="ngModel" type="password" [ngModel]="listData.password"  name="userpassword" 
+                class="form-control">
+            <span *ngIf="password.invalid && password.touched" class="error">password is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input minlength="8" maxlength="10" #mobile="ngModel" type="text" name="usermobile" [ngModel]="listData.mobile1" 
+                class="form-control">
+            <span *ngIf="mobile.invalid && mobile.touched" class="error">mobile is invalid</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input pattern="[a-zA-Z ]*" #address="ngModel" type="text" name="useraddress" [ngModel]="listData.address"  class="form-control">
+            <span *ngIf="address.invalid && address.touched" class="error">address is invalid</span>
+        </div>
+
+        <button type="submit" [disabled]="listForm.invalid" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>

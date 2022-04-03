@@ -1,0 +1,9 @@
+<p>form works!</p>
+
+<form #formID="ngForm" (ngSubmit)="getUserValue(formID.value)">
+    <input type="text" ngModel name="username"><br />
+    <input type="text" ngModel name="age"><br />
+    <input type="text" ngModel name="address"><br />
+    <input type="password" ngModel name="password"><br /><br /><br />
+    <Button> Get user Value</Button>
+</form>
