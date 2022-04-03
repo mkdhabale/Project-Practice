@@ -1,0 +1,113 @@
+﻿@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    @*load from cdn and minified for other than developement*@
+    <environment include="Development">
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+
+    <environment exclude="Development">
+        <link rel="stylesheet"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous"
+              href="https://sstackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute"
+              asp-suppress-fallback-integrity="true" />
+    </environment>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" asp-controller="home" asp-action="index">
+                <img src="~/images/employees.png" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="Index">List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="create">Create</a>
+                        </li>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Administration" asp-action="ListRoles">
+                                    Manage Roles
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Administration" asp-action="ListUsers">
+                                    Manage Users
+                                </a>
+                            </li>
+
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="ChangePassword">
+                                Change Password
+                            </a>
+                        </li>
+                    }
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    @*If the user is signed-in display Logout link*@
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <form method="post" asp-controller="account" asp-action="logout">
+                                <button type="submit" style="width:auto"
+                                        class="nav-link btn btn-link py-0">
+                                    Logout @User.Identity.Name
+                                </button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="account" asp-action="register">
+                                Register
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="account" asp-action="login">
+                                Login
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+        <div>
+            @RenderBody()
+        </div>
+
+        @*browser are smart if multiple js request done they fetch only ony this might be because of MVC render*@
+        @*
+            <script src="~/js/CustomScript11.js"></script>
+            <script src="~/js/CustomScript11.js"></script>*@
+        @*option add script from views  OR you can use @if (IsSectionDefined("Scripts")) *@
+        @RenderSection("Scripts", required: false)
+    </div>
+</body>
+</html>
