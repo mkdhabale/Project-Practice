@@ -1,0 +1,12 @@
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.dll.config
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.dll
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.pdb
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EntityFramework.dll
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EntityFramework.xml
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.csproj.AssemblyReference.cache
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.csproj.CoreCompileInputs.cache
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.csproj.CopyComplete
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.dll
+D:\GIT_WORKSPACE\Mukul\API\EmployeeService\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.pdb

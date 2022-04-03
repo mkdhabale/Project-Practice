@@ -1,0 +1,11 @@
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\BusniessLayer.dll.config
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\BusniessLayer.dll
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\BusniessLayer.pdb
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\EntityFramework.dll
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\EntityFramework.xml
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\obj\Debug\BusniessLayer.dll
+D:\GIT_WORKSPACE\Mukul\ASP.NET Web MVC\MVC_Practice\BusniessLayer\obj\Debug\BusniessLayer.pdb
