@@ -1,0 +1,177 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository.Tests\\GitRepository.Tests.csproj": {}
+  },
+  "projects": {
+    "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository.Tests\\GitRepository.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository.Tests\\GitRepository.Tests.csproj",
+        "projectName": "GitRepository.Tests",
+        "projectPath": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository.Tests\\GitRepository.Tests.csproj",
+        "packagesPath": "C:\\Users\\mukulk\\.nuget\\packages\\",
+        "outputPath": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mukulk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository\\GitRepository.csproj": {
+                "projectPath": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository\\GitRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository\\GitRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository\\GitRepository.csproj",
+        "projectName": "GitRepository",
+        "projectPath": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository\\GitRepository.csproj",
+        "packagesPath": "C:\\Users\\mukulk\\.nuget\\packages\\",
+        "outputPath": "D:\\GIT_WORKSPACE\\Mukul GIT\\Project-Practice\\ASP.NET Core\\API\\GitRepository\\GitRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mukulk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0-rc2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[107.3.1-alpha.0.26, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.16, 5.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
