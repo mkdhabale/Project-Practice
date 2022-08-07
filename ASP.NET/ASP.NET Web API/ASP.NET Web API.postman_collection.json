@@ -1,0 +1,1279 @@
+{
+	"info": {
+		"_postman_id": "23b20e4f-be4b-467e-8c93-72034f0ee2b9",
+		"name": "ASP.NET Web API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Practice",
+			"item": [
+				{
+					"name": "Values1",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:44329/api/Values1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Values1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"New created 1\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44329/api/Values1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Values1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"String Updated\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44329/api/Values1/2",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Values1",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:44329/api/Values1/0",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Values1",
+										"0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employees",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml;q=0.8,application/json;q=0.9",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:44329/api/Employees",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "firstName",
+											"value": "Mark9",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "sname",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "FeMale",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "555",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://localhost:44329/api/Employees",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:44329/api/Employees/6",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Employees",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "firstName",
+											"value": "MarkR5",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "hhh",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "557",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://localhost:44329/api/Employees/1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"Employees",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employees1",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": null
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EmployeesBasicAuth",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "male",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "male",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:44329/api/EmployeesBasicAuth",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"EmployeesBasicAuth"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EmployeeTokenAuth",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://localhost:44329/api/EmployeeTokenAuth",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"EmployeeTokenAuth"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Routing",
+					"item": [
+						{
+							"name": "RoutingBasicStudent",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/Students",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"Students"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/Students/1",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"Students",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Courses",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/Students/1/courses",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"Students",
+												"1",
+												"courses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Stuednet Details",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/Students/1/studentDetails",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"Students",
+												"1",
+												"studentDetails"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "RoutingPrefixStudent",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/studentsRoutePrefix",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"studentsRoutePrefix"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/studentsRoutePrefix/1",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"studentsRoutePrefix",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Courses",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/studentsRoutePrefix/1/courses",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"studentsRoutePrefix",
+												"1",
+												"courses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Student Details",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/studentsRoutePrefix/1/studentDetails",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"studentsRoutePrefix",
+												"1",
+												"studentDetails"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Teacher",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/studentsRoutePrefix/api/teachers",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"studentsRoutePrefix",
+												"api",
+												"teachers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Teacher 1",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/teachers",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"teachers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Post with Location",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "Id",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "Name",
+													"value": "Ram",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://localhost:44329/api/studentsRoutePrefix",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"studentsRoutePrefix"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "StudentHttpAction",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44329/api/StudentHttpAction",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"StudentHttpAction"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44329/api/StudentHttpAction/45",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44329",
+									"path": [
+										"api",
+										"StudentHttpAction",
+										"45"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "VersioningURI",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/v1/VersioningURI",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"v1",
+												"VersioningURI"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/v1/VersioningURI/2",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"v1",
+												"VersioningURI",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "V2",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/v2/VersioningURI",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"v2",
+												"VersioningURI"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/v2/VersioningURI/2",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"v2",
+												"VersioningURI",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "VersioningQueryString",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningQueryString?v=1",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningQueryString"
+											],
+											"query": [
+												{
+													"key": "v",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningQueryString/2?v=1",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningQueryString",
+												"2"
+											],
+											"query": [
+												{
+													"key": "v",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "V2",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningQueryString?v=2",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningQueryString"
+											],
+											"query": [
+												{
+													"key": "v",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningQueryString/2?v=2",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningQueryString",
+												"2"
+											],
+											"query": [
+												{
+													"key": "v",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "VersioningCustomHeader",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-CustomHeader-StudentService-Version",
+												"value": "1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningCustomHeader",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningCustomHeader"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CustomHeader-StudentService-Version",
+												"value": "1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningCustomHeader/1",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningCustomHeader",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "V2",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-CustomHeader-StudentService-Version",
+												"value": "2",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningCustomHeader",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningCustomHeader"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CustomHeader-StudentService-Version",
+												"value": "2",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningCustomHeader/2",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningCustomHeader",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "VersioningAcceptHeader",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json;version=1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningAcceptHeader",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningAcceptHeader"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json; version=1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningAcceptHeader/1",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningAcceptHeader",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "V2",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json; version = 2",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningAcceptHeader",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningAcceptHeader"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json; version = 2",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://localhost:44329/api/VersioningAcceptHeader/2",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44329",
+											"path": [
+												"api",
+												"VersioningAcceptHeader",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Token",
+					"item": [
+						{
+							"name": "Employee",
+							"item": [
+								{
+									"name": "Get",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "xsfdrK4Yp9qbQYqqXszSsORuRwHeuI4nEQjtVfTJv4PvQwaeFXK-22fy7XjdNE5giL94lVeEn8zrtt6zSgc6So90lIHjc6AYR0FaMcrcW6bZnnYIAb1vpM-NwHnIMDJ-SQjyuDUalTOA1Gy3uN0zHgaGqH4ymDVljlYbiGEY-7r73VWGSSeanO1ZVPDg1oc-oAgIzRpqCij1Gc6yhS7m7a1FsOq-r2_3sllVPJ7T0BUt0DIAFvEJbN51J27q4Okm4MNAi6EbRWCBbck3eZ2-DnQkNEcdns3lmTfj-Yb-PygiS84sA0TRJlAydF-i-1StS8kn9pMKUauGyJpBpCCGTawjVJ1RAxtg4sFKeaerxp8MSkR9dUwlzt4U3Dar4MFgC0EU8k2e7WY28bzBfP4q7g4AMsN3kniG83utCCO_StqvWnYdEPeCf83zqfp6FEnvMiHlnvg7B33bYnKVEicnhYwPaqpNiqb1S477RGcQ19QiBSRf-xpdHhad8nMH21A_",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:44317/api/AuthToken_Employees",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "44317",
+											"path": [
+												"api",
+												"AuthToken_Employees"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "mukuld3@quickcap.net",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Dbatu.2016",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://localhost:44317/token",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44317",
+									"path": [
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

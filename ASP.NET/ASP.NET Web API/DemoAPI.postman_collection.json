@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "9237d872-35f5-4e64-bb52-71e4c0cb39ad",
+		"name": "DemoAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DEMO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:56411/api/People",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"People"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    ID : 4,\r\n    FirstNamE1 : 'M4',\r\n    LastName : 'D4'\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/People",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"People"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic bWFsZTptYWxl",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44370/api/employee",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"FirstName\" : \"mukld\"}"
+				},
+				"url": {
+					"raw": "https://localhost:44370/api/employee",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44370/api/employee?name=Mary",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"api",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Mary"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"LastName\" : \"mukld\", \"FirstName\" : \"Valarie\"}"
+				},
+				"url": {
+					"raw": "https://localhost:44370/api/employee?name=Valarie",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"api",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Valarie"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
