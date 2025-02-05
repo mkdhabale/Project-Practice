@@ -12,6 +12,7 @@ namespace EmployeeService
         {
             using (TrainingDBEntities entities = new TrainingDBEntities())
             {
+                
                 return entities.Users1.Any(user =>
                        user.Username.Equals(username, StringComparison.OrdinalIgnoreCase)
                                           && user.Password == password);
